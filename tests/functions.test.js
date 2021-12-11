@@ -30,7 +30,7 @@ describe('test calcular', () => {
         expect(calcs.suma(1,2,3)).toEqual(6);
     });
 
-    test('metodo suma', () => {
+    test('metodo resta', () => {
         expect(calcs.resta(1,2,3)).toEqual(-6);
     });
 });
