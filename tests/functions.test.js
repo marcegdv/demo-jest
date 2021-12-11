@@ -29,4 +29,8 @@ describe('test calcular', () => {
     test('metodo suma', () => {
         expect(calcs.suma(1,2,3)).toEqual(6);
     });
+
+    test('metodo suma', () => {
+        expect(calcs.resta(1,2,3)).toEqual(-6);
+    });
 });
