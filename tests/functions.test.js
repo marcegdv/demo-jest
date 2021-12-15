@@ -107,11 +107,13 @@ describe('tests de functions.js con mocks', () => {
     describe('tests calcular', () => {
         /*El siguiente mock, es un mock que reimplementa un método que expone la
         funcion calcular(). Ahora la función tiene el método .resta() mockeado y
-        su comportamiento no es el mismo que el original. El ejemplo en este
+        su comportamiento no es el mismo que el original. El ejemplo de este
         test es ver una función que puede ser mockeada parcialmente. Los métodos
-        de .suma() y .multiplica() no han sido alterados en su comportamiento.*/
+        de .suma() y .multiplica() no han sido alterados en su comportamiento.
+        En los siguientes llamados al método .resta() su comportamiento será el
+        original.  */
         const calcs = calcular();
-        jest.spyOn(calcs, 'resta').mockImplementation(function () {
+        jest.spyOn(calcs, 'resta').mockImplementationOnce(function () {
             const args = [...arguments];
             if (args.length < 1) { return 0; }
             else if (args.length < 2) { return args[0]; }
@@ -126,7 +128,14 @@ describe('tests de functions.js con mocks', () => {
             expect(calcs.multiplica(1, 2, 3, 4)).toEqual(24);
         });
         test('metodo resta', () => {
+            //Se utilizará el método mockeado una sola vez
             expect(calcs.resta(1, 2, 3, 4)).toEqual(-8);
+        });
+        test('metodo resta', () => {
+            //Se utiliza el comportamiento original
+            const resultado = calcs.resta(1, 2, 3, 4)
+            expect(resultado).not.toEqual(-8);
+            expect(resultado).toEqual(-10);
         });
     });
 });
