@@ -18,7 +18,7 @@ describe('tests de functions.js', () => {
             expect(factorial(num)).toEqual(res);
         });
     });
-    describe ('tests asincronia', () => {
+    describe('tests asincronia', () => {
         test('con usuario Juan retorna el mail de Juan', async () => {
             const usuario = 'Juan';
             const respuesta = 'juan@email.com';
@@ -31,7 +31,6 @@ describe('tests de functions.js', () => {
             const respuesta = '';
             try {
                 const response = await asincronia(usuario);
-                expect(response).toEqual(respuesta);
             } catch (error) {
                 const err = new Error('Usuario ' + usuario + ' no existe.');
                 expect(error).toEqual(err);
@@ -41,13 +40,13 @@ describe('tests de functions.js', () => {
     describe('tests calcular', () => {
         const calcs = calcular();
         test('metodo suma', () => {
-            expect(calcs.suma(1,2,3,4)).toEqual(10);
+            expect(calcs.suma(1, 2, 3, 4)).toEqual(10);
         });
         test('metodo multiplica', () => {
-            expect(calcs.multiplica(1,2,3,4)).toEqual(24);
+            expect(calcs.multiplica(1, 2, 3, 4)).toEqual(24);
         });
         test('metodo resta', () => {
-            expect(calcs.resta(1,2,3,4)).toEqual(-10);
+            expect(calcs.resta(1, 2, 3, 4)).toEqual(-10);
         });
     });
 });
@@ -62,13 +61,12 @@ describe('tests de functions.js con mocks', () => {
         Los resultados que retornará la función mock son asignados mediante el
         método .mockReturnValueOnce() y esos retornos serán únicos para las tres
         veces que se llame a la función, y serán en el orden en que fueron
-        asignados. El orden de los resultados es importante o el test fallará.
-        - Ejercicio: ¿Qué corurrirá si la función se llama en un cuarto test?   */
+        asignados. El orden de los resultados es importante o el test fallará. */
         const factorialMock = jest.fn()
-            .mockReturnValueOnce(6) //1er valor a retornar en la 1er llamada
-            .mockReturnValueOnce(1) //2dp valor a retornar en la 2da llamada
-            .mockReturnValue(0);    //valor default a partir del 3er llamado
-        test.each([[3,6],[0,1],[-1,0]])('3! = 6', (num, res) => {
+            .mockReturnValueOnce(6)  //1er valor a retornar en la 1er llamada
+            .mockReturnValueOnce(1)  //2do valor a retornar en la 2da llamada
+            .mockReturnValueOnce(0); //3er valor a retornar en la 3ra llamada
+        test.each([[3, 6], [0, 1], [-1, 0]])('3! = 6, 0! = 1, -1! = 0', (num, res) => {
             /*Como vemos, este test esta mejor escrito que los test de las
             líneas 4 a la 20. Se pueden resumir todas esas líneas de código para
             tests en un solo test, ya que los test se repiten pero solo cambian
@@ -76,8 +74,14 @@ describe('tests de functions.js con mocks', () => {
             en los "límites" de que está manejando un algoritmo. */
             expect(factorialMock(num)).toEqual(res);
         });
+        /*- Ejercicio: ¿Qué corurrirá si la función se llama una cuarta vez? */
+        xtest('4ta llamada al mock', () => {
+            /*Nota: la función xtest() o test.skip() no ejecutan el test. También
+                    funciona con xit() y it.skip()  */
+            console.log(factorialMock(5));
+        });
     });
-    describe ('tests asincronia con mock', () => {
+    describe('tests asincronia con mock', () => {
         /*----[ Mock una función asuncrónica ]----
         La función asincrona simula ser una API que retornará una respuesta luego
         de un tiempo, por lo que hay que esperar cierto tiempo. Además, puede
@@ -85,31 +89,44 @@ describe('tests de functions.js con mocks', () => {
         Y como la función es un mock, no es necesario usar await.  */
         const asincroniaMock = jest.fn()
             .mockReturnValueOnce('juan@email.com')
-            .mockReturnValueOnce(new Error('No existe'))
+            .mockReturnValueOnce(Error('No existe'))
         test('con usuario Juan retorna el mail de Juan', () => {
             const usuario = 'Juan';
             const respuesta = 'juan@email.com';
             const response = asincroniaMock(usuario);
             expect(response).toEqual(respuesta);
         });
-        test('con usuario distinto de Juan lanza un error', () => {
+        test('con usuario distinto de Juan lanza un error', async () => {
             /*Como vemos en este test, no necesita de un try/catch para comprobar
             que la funcion lanza un error.  */
             const usuario = 'John Doe';
-            const err = new Error('No existe');
+            const err = Error('No existe');
             expect(asincroniaMock(usuario)).toEqual(err);
         });
     });
     describe('tests calcular', () => {
+        /*El siguiente mock, es un mock que reimplementa un método que expone la
+        funcion calcular(). Ahora la función tiene el método .resta() mockeado y
+        su comportamiento no es el mismo que el original. El ejemplo en este
+        test es ver una función que puede ser mockeada parcialmente. Los métodos
+        de .suma() y .multiplica() no han sido alterados en su comportamiento.*/
         const calcs = calcular();
+        jest.spyOn(calcs, 'resta').mockImplementation(function () {
+            const args = [...arguments];
+            if (args.length < 1) { return 0; }
+            else if (args.length < 2) { return args[0]; }
+            else {
+                return args[0] + args.slice(1).reduce((a, b) => a - b, 0);
+            }
+        });
         test('metodo suma', () => {
-            expect(calcs.suma(1,2,3,4)).toEqual(10);
+            expect(calcs.suma(1, 2, 3, 4)).toEqual(10);
         });
         test('metodo multiplica', () => {
-            expect(calcs.multiplica(1,2,3,4)).toEqual(24);
+            expect(calcs.multiplica(1, 2, 3, 4)).toEqual(24);
         });
         test('metodo resta', () => {
-            expect(calcs.resta(1,2,3,4)).toEqual(-10);
+            expect(calcs.resta(1, 2, 3, 4)).toEqual(-8);
         });
     });
 });
