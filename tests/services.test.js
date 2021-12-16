@@ -39,14 +39,45 @@ describe('test de los servicios de la api de feriados', () => {
     })
 
     describe('servicio de obtención de feriados de un país', () => {
-        test('obtiene los feriados de un país', () => {
-
+        test('obtiene los feriados de un país', async () => {
+            const year = 2022;
+            const code = 'AR';
+            const days = await services.getCountryHolyDays(year, code);
+            expect(days[0]).toHaveProperty('date',`${year}-01-01`);
         })
-        test('obtiene los feriados de un país con códigos inválidos', () => {
-            
+        test('retorna error con códigos inválidos de país', async () => {
+            try {
+                const year = 2022;
+                const code = 'ARN';
+                await services.getCountryHolyDays(year, code);
+            } catch (error) {
+                expect(error.response.status).toEqual(404);
+                expect(error.isAxiosError).toBe(true);
+            }
+            try {
+                const year = 2022;
+                const code = { pais: 'AR' };
+                await services.getCountryHolyDays(year, code);
+            } catch (error) {
+                expect(error).toEqual(Error('Country code [object Object] invalid.'));
+            }
         })
-        test('obtiene los feriados de un país con años inválidos', () => {
-            
+        test('retorna error con años inválidos', async () => {
+            const year1 = '2022';
+            const code1 = 'AR';
+            try {
+                await services.getCountryHolyDays(year1, code1);
+            } catch (error) {
+                expect(error).toEqual(Error(`Year ${year1} invalid.`));
+            }
+            const year2 = 22222;
+            const code2 = 'US';
+            try {
+                await services.getCountryHolyDays(year2, code2);
+            } catch (error) {
+                expect(error.response.status).toEqual(404);
+                expect(error.isAxiosError).toEqual(true);
+            }
         })
     })
 });

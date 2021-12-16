@@ -28,7 +28,7 @@ const validateCountryCode = (countryCode) => {
 }
 
 const validateYear = (year) => {
-    if (typeof year !== 'number')  { throw new Error(`Year ${yeay} invalid.`); }
+    if (typeof year !== 'number')  { throw new Error(`Year ${year} invalid.`); }
     return year;
 }
 
