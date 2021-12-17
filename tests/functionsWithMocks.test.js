@@ -1,8 +1,8 @@
 /*
 
     En este archivo, se realizan test similares a los del archivo functiones.test.js
-    con reimplementaciones completas y parciales de las funciones que se encuentran
-    en el archivo src/functions/functions.js junto con algunos test reimplementados.
+    con reimplementaciones completas y parciales de funciones que se encuentran en
+    el archivo src/functions/functions.js junto con algunos test reimplementados.
 
 */
 import { calcular } from "../src/functions/functions";

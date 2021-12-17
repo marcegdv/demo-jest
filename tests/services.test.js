@@ -16,7 +16,7 @@ describe('test de los servicios de la api de feriados', () => {
             expect(Array.isArray(paises));
             expect(paises.lenght).not.toEqual(0);
         });
-    })
+    });
 
     describe('servicio de información de país', () => {
         test('obtiene información sobre un país, mediante un código de país válido', async () => {
@@ -50,7 +50,7 @@ describe('test de los servicios de la api de feriados', () => {
             const code = 'AR';
             const days = await services.getCountryHolyDays(year, code);
             expect(days[0]).toHaveProperty('date', `${year}-01-01`);
-        })
+        });
         test('retorna error con códigos inválidos de país', async () => {
             try {
                 const year = 2022;
@@ -59,15 +59,15 @@ describe('test de los servicios de la api de feriados', () => {
             } catch (error) {
                 expect(error.response.status).toEqual(404);
                 expect(error.isAxiosError).toBe(true);
-            }
+            };
             try {
                 const year = 2022;
                 const code = { pais: 'AR' };
                 await services.getCountryHolyDays(year, code);
             } catch (error) {
                 expect(error).toEqual(Error('Country code [object Object] invalid.'));
-            }
-        })
+            };
+        });
         test('retorna error con años inválidos', async () => {
             const year1 = '2022';
             const code1 = 'AR';
@@ -75,7 +75,7 @@ describe('test de los servicios de la api de feriados', () => {
                 await services.getCountryHolyDays(year1, code1);
             } catch (error) {
                 expect(error).toEqual(Error(`Year ${year1} invalid.`));
-            }
+            };
             const year2 = 22222;
             const code2 = 'US';
             try {
@@ -83,8 +83,8 @@ describe('test de los servicios de la api de feriados', () => {
             } catch (error) {
                 expect(error.response.status).toEqual(404);
                 expect(error.isAxiosError).toEqual(true);
-            }
-        })
+            };
+        });
     })
 });
 

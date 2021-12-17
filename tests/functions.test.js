@@ -34,6 +34,8 @@ describe('tests de functions.js', () => {
     });
 
     describe('tests función asincronia()', () => {
+        /* Para testear funciones asíncronas, basta con agregar async a la
+        función flecha que contendrá la ejecución de la función asincrónica. */
         test('con usuario Juan retorna el mail de Juan', async () => {
             const usuario = 'Juan';
             const respuesta = 'juan@email.com';

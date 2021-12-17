@@ -11,8 +11,8 @@ import axios from 'axios';
 import * as services from '../src/services/services';
 import * as mockResponses from './mocks/servicesResponsesMocks';
 
-/* De desta manera, jest va a mockear axios, y nos
-permitirá decirle a axios que tiene que responder. */
+/* De desta manera, jest va a mockear axios, y nos permitirá "decirle a axios"
+que tiene que responder al momento de reimplementarle el método .get() */
 jest.mock('axios');
 
 describe('test de los servicios de la api de feriados con moks', () => {
