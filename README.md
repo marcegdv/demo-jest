@@ -13,7 +13,7 @@ Comienza viendo los archivos en el siguiente orden:
   * test/services.test.js - contiene tests simples de los servicios que ofrece la API.
   * test/servicesWithMocks.test.js - contiene ejemplos de mocks de la API.
 
-**Si utilizas Visual Studio Code, instalar la extensión ``` Jest Runner ``` te será MUY UTIL y vital para que puedas aprovechar al 100% los ejemplos en este repositorio.** Podrás ejecutar aisladamente cada test, o los tests que esten agrupados.
+**Si utilizas Visual Studio Code, instalar la extensión ``` Jest Runner ``` te será MUY UTIL para que puedas aprovechar al 100% los ejemplos en este repositorio.** Podrás ejecutar aisladamente cada test, o los tests que esten agrupados.
 
 Recuerda luego de clonar este repositorio, ejecutar el comando: ``` npm install ``` para instalar las dependencias.
 
