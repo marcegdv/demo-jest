@@ -15,7 +15,7 @@ Comienza viendo los archivos en el siguiente orden:
 
 **Si utilizas Visual Studio Code, instalar la extensión ``` Jest Runner ``` te será MUY UTIL y vital para que puedas aprobechar al 100% los ejemplos en este repositorio.** Podrás ejecutar aisladamente cada test, o los tests que esten agrupados.
 
-Recuerda luego de clonar este repositorio, ejecutar el comando: **npm install** para instalar las dependencias.
+Recuerda luego de clonar este repositorio, ejecutar el comando: ``` npm install ``` para instalar las dependencias.
 
 ## Links útiles
 Api utilizada para los test: https://date.nager.at/Api
