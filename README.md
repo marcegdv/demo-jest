@@ -17,6 +17,9 @@ Comienza viendo los archivos en el siguiente orden:
 
 Recuerda luego de clonar este repositorio, ejecutar el comando: **npm install** para instalar las dependencias.
 
+## Links útiles
 Api utilizada para los test: https://date.nager.at/Api
+
 Más APIs en: https://github.com/public-apis/public-apis#open-data
+
 Jest: https://jestjs.io/
