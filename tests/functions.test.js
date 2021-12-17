@@ -1,4 +1,4 @@
-import { factorial, asincronia, calcular } from "../src/functions";
+import { factorial, asincronia, calcular } from "../src/functions/functions";
 
 describe('tests de functions.js', () => {
     describe('tests factorial', () => {
