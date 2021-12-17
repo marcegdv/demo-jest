@@ -14,7 +14,9 @@ Comienza viendo los archivos en el siguiente orden:
   * test/servicesWithMocks.test.js - contiene ejemplos de mocks de la API.
 
 **Si utilizas Visual Studio Code, instalar la extensión ``` Jest Runner ``` te será MUY UTIL para que puedas aprovechar al 100% los ejemplos en este repositorio.** Podrás ejecutar aisladamente cada test, o los tests que esten agrupados.
+
 Extensión para Visual Studio Code:
+
 ![image](https://github.com/marcegdv/demo-jest/blob/master/jestRunnerExtension.jpg?raw=true)
 
 Luego de instalar la extensiòn, aparecerá la opción **Run** con la que podrás focalizar la ejecución de tests:
