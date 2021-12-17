@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "cd0aca70-aa05-4a33-becb-ecc4795bb5f5",
+		"name": "API Nager.Date",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CountrieHolyDays",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://date.nager.at/api/v3/publicholidays/2022/yx",
+					"protocol": "https",
+					"host": [
+						"date",
+						"nager",
+						"at"
+					],
+					"path": [
+						"api",
+						"v3",
+						"publicholidays",
+						"2022",
+						"yx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AvailableCountries",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					}
+				],
+				"url": {
+					"raw": "https://date.nager.at/api/v3/AvailableCountries",
+					"protocol": "https",
+					"host": [
+						"date",
+						"nager",
+						"at"
+					],
+					"path": [
+						"api",
+						"v3",
+						"AvailableCountries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CountryInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					}
+				],
+				"url": {
+					"raw": "https://date.nager.at/api/v3/CountryInfo/AR",
+					"protocol": "https",
+					"host": [
+						"date",
+						"nager",
+						"at"
+					],
+					"path": [
+						"api",
+						"v3",
+						"CountryInfo",
+						"AR"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
