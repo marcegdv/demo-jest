@@ -15,6 +15,8 @@ Comienza viendo los archivos en el siguiente orden:
 
 ## Si utilizas Visual Studio Code, instalar la extensión Jest Runner te será MUY UTIL y vital para que puedas aprobechar al 100% los ejemplos en este repositorio.
 
-Recuerda luego de clonar este repositorio, ejecutar el comando: ## npm install
+Recuerda luego de clonar este repositorio, ejecutar el comando: **npm install** para instalar las dependencias.
 
 Api utilizada para los test: https://date.nager.at/Api
+Más APIs en: https://github.com/public-apis/public-apis#open-data
+Jest: https://jestjs.io/
