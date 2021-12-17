@@ -9,7 +9,7 @@
 */
 import axios from 'axios';
 import * as services from '../src/services';
-import * as mockResponses from './mocks/servicesResponsesMocks';
+import * as mockResponses from './responseMocks/servicesResponsesMocks';
 
 /* De desta manera, jest va a mockear axios, y nos permitirá "decirle a axios"
 que tiene que responder al momento de reimplementarle el método .get() */
