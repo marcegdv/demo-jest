@@ -3,7 +3,7 @@
 En este repositorio encontrarás unos ejemplos simples que te permitirá realizar tus primeros tests con mocks que reimplementan parcialmente o totalmente una función o un módulo de node.
 
 ## Recomendaciones
-El contenido esta organizado para que sea visto en un determinado orden, el cual comienza desde algo sencillo a algo un poco mas complejo. Y algunos ejercicios de diferentes complejidades.
+El contenido esta organizado para que sea visto en un determinado orden, el cual comienza desde algo sencillo a algo un poco mas complejo. Y algunos ejercicios de diferentes complejidades. Econtrarás, dentro del código, comentarios detallando contenidos y situaciones.
 
 Comienza viendo los archivos en el siguiente orden:
   * src/functions.js - contiene funciones que realizan cáculos sensillos.
