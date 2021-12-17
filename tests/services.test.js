@@ -83,9 +83,10 @@ describe('test de los servicios de la api de feriados', () => {
 
 
 
-jest.mock('axios');
 
 describe('test de los servicios de la api de feriados con moks', () => {
+    
+    jest.mock('axios');
 
     describe ('servicio de obtención de países', () => {
         test('obtiene la lista de países', async () => {
