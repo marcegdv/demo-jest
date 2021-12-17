@@ -5,7 +5,7 @@
     el archivo src/functions/functions.js junto con algunos test reimplementados.
 
 */
-import { calcular } from "../src/functions/functions";
+import { calcular } from "../src/functions";
 
 describe('tests de functions.js con mocks', () => {
 

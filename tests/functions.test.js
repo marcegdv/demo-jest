@@ -4,7 +4,7 @@
     fuciones contenidas en el archivo src/functions/functions.js.
 
 */
-import { factorial, asincronia, calcular } from "../src/functions/functions";
+import { factorial, asincronia, calcular } from "../src/functions";
 
 /* Una característica de jest, es que puede agrupar test utilizando
 la función describe(), con la que se pueden ejecutar grupos de test.

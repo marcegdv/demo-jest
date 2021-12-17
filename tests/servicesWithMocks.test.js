@@ -8,7 +8,7 @@
 
 */
 import axios from 'axios';
-import * as services from '../src/services/services';
+import * as services from '../src/services';
 import * as mockResponses from './mocks/servicesResponsesMocks';
 
 /* De desta manera, jest va a mockear axios, y nos permitirá "decirle a axios"

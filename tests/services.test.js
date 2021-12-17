@@ -6,7 +6,7 @@
     días feriados de ciertos países, y también cierta información de cada país.
 
 */
-import * as services from '../src/services/services';
+import * as services from '../src/services';
 
 describe('test de los servicios de la api de feriados', () => {
 
