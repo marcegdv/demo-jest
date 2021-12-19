@@ -19,7 +19,7 @@ Extensión para Visual Studio Code:
 
 ![image](https://github.com/marcegdv/demo-jest/blob/master/jestRunnerExtension.jpg?raw=true)
 
-Luego de instalar la extensiòn, aparecerá la opción **Run** con la que podrás focalizar la ejecución de tests:
+Luego de instalar la extensión, aparecerá la opción **Run** con la que podrás focalizar la ejecución de tests:
 
 ![image](https://raw.githubusercontent.com/marcegdv/demo-jest/master/jestRunnerRunOption.jpg)
 
