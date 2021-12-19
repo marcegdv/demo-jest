@@ -6,7 +6,7 @@ En este repositorio encontrarás unos ejemplos simples que te permitirá realiza
 El contenido está organizado para que sea visto en un determinado orden, el cual comienza desde algo sencillo a algo un poco más complejo. Y algunos ejercicios de diferentes complejidades. Econtrarás, dentro del código, comentarios detallando contenidos y situaciones.
 
 Comienza viendo los archivos en el siguiente orden:
-  * src/functions.js - contiene funciones que realizan cáculos sensillos.
+  * src/functions.js - contiene funciones que realizan cáculos sencillos.
   * src/services.js - contiene funciones simples que consumen una API.
   * tests/functions.test.js - contiene los primeros ejemplos de tests.
   * tests/functionsWithMocks.test.js - contiene los primeros mocks.
@@ -26,7 +26,7 @@ Luego de instalar la extensión, aparecerá la opción **Run** con la que podrá
 Recuerda luego de clonar este repositorio, ejecutar el comando: ``` npm install ``` para instalar las dependencias.
 
 ## Links útiles
-Api utilizada para los test: https://date.nager.at/Api
+API utilizada para los test: https://date.nager.at/Api
 
 Más APIs en: https://github.com/public-apis/public-apis#open-data
 
