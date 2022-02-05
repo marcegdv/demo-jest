@@ -81,7 +81,7 @@ describe('test de los servicios de la api de feriados', () => {
             try {
                 await services.getCountryHolyDays(year2, code2);
             } catch (error) {
-                expect(error.response.status).toEqual(404);
+                expect(error.response.status).toEqual(400);
                 expect(error.isAxiosError).toEqual(true);
             };
         });

@@ -31,3 +31,17 @@ Api utilizada para los test: https://date.nager.at/Api
 Más APIs en: https://github.com/public-apis/public-apis#open-data
 
 Jest: https://jestjs.io/
+
+## Update en API utilizada:
+La API que se utiliza para los ejemplos en services.test.js fue actualizada y para un año que no es válido ya no retorna status 404, ahora retorna **status 400**:
+```
+{
+    "title": "One or more validation errors occurred.",
+    "status": 400,
+    "errors": {
+        "year": [
+            "Year 22222 is not supported"
+        ]
+    }
+}
+```
