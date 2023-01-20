@@ -77,12 +77,12 @@ describe('tests de functions.js con mocks', () => {
     });
 
     describe('tests calcular', () => {
-        /*El siguiente mock, es un mock que reimplementa un método que expone la
-        funcion calcular(). Ahora la función tiene el método .resta() mockeado y
-        su comportamiento no es el mismo que el original. El ejemplo de este
-        test es ver una función que puede ser mockeada parcialmente. Los métodos
-        de .suma() y .multiplica() no han sido alterados en su comportamiento.
-        En los siguientes llamados al método .resta() su comportamiento será el
+        /*El siguiente mockreimplementa un método que expone la funcion
+        calcular(). Ahora la función tiene el método .resta() mockeado y su
+        comportamiento no es el mismo que el original. El ejemplo de este test
+        es ver una función que puede ser mockeada parcialmente. Los métodos de
+        .suma() y .multiplica() no han sido alterados en su comportamiento. En
+        los siguientes llamados al método .resta() su comportamiento será el
         original.  */
         const calcs = calcular();
         jest.spyOn(calcs, 'resta').mockImplementationOnce(function () {
