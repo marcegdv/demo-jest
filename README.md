@@ -2,6 +2,13 @@
 
 En este repositorio encontrarás unos ejemplos simples que te permitirá realizar tus primeros tests con mocks que reimplementan parcialmente o totalmente una función o un módulo de node.
 
+### Comandos de consola:
+
+| Script | Detalle |
+| --- | --- |
+| `npm run test` | Ejecuta los tests y muestra el resumen de exitos, no ejecutados y fallos. |
+| `npm ron test-coverage` | Ejecuta los tests y muestra el estado de cobertura del código testeado.
+
 ## Recomendaciones
 El contenido está organizado para que sea visto en un determinado orden, el cual comienza desde algo sencillo a algo un poco más complejo. Y algunos ejercicios de diferentes complejidades. Econtrarás, dentro del código, comentarios detallando contenidos y situaciones.
 
@@ -32,7 +39,7 @@ Más APIs en: https://github.com/public-apis/public-apis#open-data
 
 Jest: https://jestjs.io/
 
-## Update en API utilizada:
+## Update en API utilizada
 La API que se utiliza para los ejemplos en services.test.js fue actualizada y para un año que no es válido ya no retorna status 404, ahora retorna **status 400**:
 ```
 {
@@ -45,3 +52,11 @@ La API que se utiliza para los ejemplos en services.test.js fue actualizada y pa
     }
 }
 ```
+
+
+## Changelog
+
+| Versión | Fecha | Detalle |
+| --- | --- | -- |
+| **1.0.1** | 2024/04/19 | Actualización de dependencias y archivo README.md |
+| **1.0.0** | 2021/12/17 | Primer publicación.
